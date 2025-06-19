@@ -8,9 +8,9 @@
 import Foundation
 
 
-final class NFXHTTPModelManager: NSObject {
+public final class NFXHTTPModelManager: NSObject {
     
-    static let shared = NFXHTTPModelManager()
+    public static let shared = NFXHTTPModelManager()
     
     let publisher = Publisher<[NFXHTTPModel]>()
        
@@ -35,7 +35,7 @@ final class NFXHTTPModelManager: NSObject {
     }
     
     /// Thread safe
-    func add(_ obj: NFXHTTPModel) {
+    public func add(_ obj: NFXHTTPModel) {
         DispatchQueue.main.async {
             self.models.insert(obj, at: 0)
         }
